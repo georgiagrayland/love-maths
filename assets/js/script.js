@@ -48,7 +48,7 @@ function checkAnswer(){
     let isCorrect = userAnswer === calculatedAnswer[0];
 
     if (isCorrect){
-        alert("Hey! You git it right! :D");
+        alert("Hey! You got it right! :D");
     } else{
         alert(`Aww you answered ${user}. The correct answer was ${calculatedAnswer[0]}!`);
     }
@@ -61,13 +61,13 @@ function checkAnswer(){
 * Directly from the dom, and returns the correct answer.
  */
 function calculateCorrectAnswer(){
-    let operad1 = parseInt(document.getElementById('operand1').innerText);
-    let operad2 = parseInt(document.getElementById('operand2').innerText);
-    let operator = parseInt(document.getElementById('operator').innerText);
+    let operand1 = parseInt(document.getElementById('operand1').innerText);
+    let operand2 = parseInt(document.getElementById('operand2').innerText);
+    let operator = document.getElementById("operator").innerText;
 
     if(operator === "+") {
-        return [operand + operand2, "addition"];
-    } else{
+        return [operand1 + operand2, "addition"];
+    } else {
         alert(`unimplemented operator ${operator}`);
         throw `Unimplemented operator ${operator}. Aborting!`;
     }
@@ -81,8 +81,8 @@ function incrementWrongAnswer(){
 
 }
 
-function displayAdditionQuestion(operad1, operand2){
-    document.getElementById('operand1').textContent = operad1;
+function displayAdditionQuestion(operand1, operand2){
+    document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = "+";
 }
